@@ -24,7 +24,9 @@ def convert():
     image_list[0].save(pdf_bytes, format='PDF', save_all=True, append_images=image_list[1:])
     pdf_bytes.seek(0)
 
-    return send_file(pdf_bytes, download_name='result.pdf', as_attachment=True)
+    img_name = os.path.splitext(files[0].filename)[0]
+    pdf_name = f"{img_name}.pdf"
+    return send_file(pdf_bytes, download_name=pdf_name, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
