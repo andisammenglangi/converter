@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image to PDF Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Image to PDF</h1>
+        <p>Upload gambar JPG/PNG, langsung jadi PDF!</p>
+        <form action="/convert" method="POST" enctype="multipart/form-data">
+            <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                <label>📁 Klik untuk pilih gambar</label>
+                <input type="file" id="fileInput" name="images" multiple accept=".jpg,.jpeg,.png">
+            </div>
+            <button type="submit">Convert ke PDF ⚡</button>
+        </form>
+    </div>
+</body>
+</html>
