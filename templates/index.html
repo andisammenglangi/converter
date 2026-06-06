@@ -13,8 +13,16 @@
                 <label>📁 Klik untuk pilih gambar</label>
                 <input type="file" id="fileInput" name="images" multiple accept=".jpg,.jpeg,.png">
             </div>
-            <button type="submit">Convert ke PDF ⚡</button>
+            <button type="submit" id="convertBtn">Convert ke PDF ⚡</button>
         </form>
     </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(){
+            const convertBtn = document.getElementById('convertBtn');
+            convertBtn.textContent = 'Converting... ⏳';
+            convertBtn.ariaDisabled=true;
+        })
+    </script>
 </body>
 </html>
